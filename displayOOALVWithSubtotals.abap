@@ -56,7 +56,7 @@
                                             '15' 'PARC_P'   'N° Parc. Pend'.
 
 * Add totals.
-  lo_aggrs = lo_table->get_aggregations( ). "get aggregations
+  lo_aggrs = lo_table->get_aggregations( ).
 
   TRY.
       CALL METHOD lo_aggrs->add_aggregation
@@ -75,11 +75,11 @@
   TRY.
     CALL METHOD lo_sort->add_sort
       EXPORTING
-        columnname = 'PERNR' "sort column always keyfield
+        columnname = 'PERNR'
       RECEIVING
         value      = lo_sort_column.
 
-    CALL METHOD lo_sort_column->set_subtotal "add subtotal
+    CALL METHOD lo_sort_column->set_subtotal
       EXPORTING
         value = if_salv_c_bool_sap=>true.
         CATCH cx_salv_data_error cx_salv_not_found cx_salv_existing.                          "#EC NO_HANDLER
